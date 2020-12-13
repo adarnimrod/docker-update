@@ -1,0 +1,26 @@
+# vim:ff=unix ts=2 sw=2 ai expandtab
+---
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-merge-conflict
+      - id: trailing-whitespace
+
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.17.0
+    hooks:
+      - id: yamllint
+
+  - repo: https://github.com/amperser/proselint/
+    rev: 0.10.2
+    hooks:
+      - id: proselint
+        types: [plain-text]
+        exclude: LICENSE
+
+  - repo: https://git.shore.co.il/nimrod/docker-pre-commit.git/
+    rev: v0.3.0
+    hooks:
+      - id: hadolint
